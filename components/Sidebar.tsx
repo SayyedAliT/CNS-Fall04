@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Section } from '../types';
+import { Section } from '../types.ts';
 import { 
   FileText, 
   ShieldAlert, 
@@ -18,6 +18,11 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) => {
+  // --- فیلدهای قابل تغییر توسط شما ---
+  const PROFESSOR_NAME = "دکتر مهسا سعیدی"; 
+  const GROUP_MEMBERS = "پوریا مهدیان - علی دهقان زاده -  سیدعلی تهامی"; 
+  // ---------------------------------
+
   const items = [
     { id: Section.Introduction, label: 'معرفی مقاله', icon: FileText },
     { id: Section.Problem, label: 'طرح مسئله (CSRF)', icon: ShieldAlert },
@@ -43,7 +48,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
           <button
             key={item.id}
             onClick={() => setActiveSection(item.id)}
-            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 text-right dir-rtl ${
+            className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 text-right ${
               activeSection === item.id 
                 ? 'bg-blue-600/10 text-blue-400 border border-blue-500/30 shadow-[0_0_15px_rgba(37,99,235,0.1)]' 
                 : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'
@@ -55,9 +60,15 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
         ))}
       </nav>
       
-      <div className="p-6 bg-slate-900/50 border-t border-slate-800 text-xs text-slate-500 space-y-1">
-        <p>استاد مربوطه: درس امنیت شبکه</p>
-        <p>اعضای گروه: دانشجویان مهندسی کامپیوتر</p>
+      <div className="p-6 bg-slate-900/50 border-t border-slate-800 text-xs text-slate-500 space-y-2">
+        <p className="flex flex-col">
+          <span className="opacity-50">استاد مربوطه:</span>
+          <span className="text-slate-300 font-bold">{PROFESSOR_NAME}</span>
+        </p>
+        <p className="flex flex-col mt-2">
+          <span className="opacity-50">اعضای گروه:</span>
+          <span className="text-slate-300 font-bold">{GROUP_MEMBERS}</span>
+        </p>
       </div>
     </aside>
   );

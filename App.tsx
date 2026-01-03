@@ -1,16 +1,16 @@
 
 import React, { useState } from 'react';
-import { Section } from './types';
-import Sidebar from './components/Sidebar';
-import Header from './components/Header';
-import IntroSection from './sections/IntroSection';
-import ProblemSection from './sections/ProblemSection';
-import ExperimentSection from './sections/ExperimentSection';
-import DefenseSection from './sections/DefenseSection';
-import ProposalSection from './sections/ProposalSection';
-import SimulationSection from './sections/SimulationSection';
-import LimitationsSection from './sections/LimitationsSection';
-import LoginCSRFSection from './sections/LoginCSRFSection';
+import { Section } from './types.ts';
+import Sidebar from './components/Sidebar.tsx';
+import Header from './components/Header.tsx';
+import IntroSection from './sections/IntroSection.tsx';
+import ProblemSection from './sections/ProblemSection.tsx';
+import ExperimentSection from './sections/ExperimentSection.tsx';
+import DefenseSection from './sections/DefenseSection.tsx';
+import ProposalSection from './sections/ProposalSection.tsx';
+import SimulationSection from './sections/SimulationSection.tsx';
+import LimitationsSection from './sections/LimitationsSection.tsx';
+import LoginCSRFSection from './sections/LoginCSRFSection.tsx';
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<Section>(Section.Introduction);
@@ -30,7 +30,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-slate-950 text-slate-200 overflow-hidden">
+    <div className="flex min-h-screen bg-slate-950 text-slate-200" dir="rtl">
       {/* Sidebar Navigation */}
       <Sidebar activeSection={activeSection} setActiveSection={setActiveSection} />
       
