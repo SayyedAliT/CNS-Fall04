@@ -1,0 +1,5 @@
+{
+  "name": "Robust CSRF Defenses Presentation",
+  "description": "A high-end academic presentation and simulation platform for the research paper 'Robust Defenses for Cross-Site Request Forgery' by Adam Barth et al. (Stanford University).",
+  "requestFramePermissions": []
+}
