@@ -60,6 +60,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
         ))}
       </nav>
       
+<<<<<<< HEAD
       <div className="p-6 bg-slate-900/50 border-t border-slate-800 text-xs text-slate-500 space-y-2">
         <p className="flex flex-col">
           <span className="opacity-50">استاد مربوطه:</span>
@@ -69,6 +70,11 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
           <span className="opacity-50">اعضای گروه:</span>
           <span className="text-slate-300 font-bold">{GROUP_MEMBERS}</span>
         </p>
+=======
+      <div className="p-6 bg-slate-900/50 border-t border-slate-800 text-xs text-slate-500 space-y-1">
+        <p>استاد درس:دکتر مهسا سعیدی/p>
+        <p>اعضای گروه: پوریا مهدیان -  علی دهقان زاده - سید علی تهامی</p>
+>>>>>>> 09f07d7a80ddeba7df144a54701f5eb714d8e7ef
       </div>
     </aside>
   );
