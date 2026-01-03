@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>پروژه امنیت شبکه - دفاع در برابر CSRF</title>
+    <title>ارائه تخصصی امنیت وب - دفاع در برابر CSRF</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -14,29 +14,31 @@
         }
         body {
             font-family: 'Vazirmatn', sans-serif;
-            background-color: #050505;
+            background-color: #030303;
             color: #e5e7eb;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
         .mono {
             font-family: 'JetBrains Mono', monospace;
         }
         .glass {
-            background: rgba(17, 24, 39, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
         .glow-text {
-            text-shadow: 0 0 10px var(--accent-glow);
+            text-shadow: 0 0 15px var(--accent-glow);
         }
         .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
+            width: 5px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
-            background: rgba(0,0,0,0.1);
+            background: rgba(0,0,0,0.2);
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #333;
+            background: #2563eb;
             border-radius: 10px;
         }
         @keyframes scanline {
@@ -44,14 +46,23 @@
             100% { transform: translateY(100%); }
         }
         .scanline {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 2px;
-            background: linear-gradient(to bottom, transparent, var(--accent), transparent);
-            opacity: 0.1;
-            animation: scanline 8s linear infinite;
+            background: linear-gradient(to right, transparent, var(--accent), transparent);
+            opacity: 0.15;
+            animation: scanline 6s linear infinite;
+            z-index: 50;
+            pointer-events: none;
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-100px); }
         }
     </style>
     <script type="importmap">
@@ -66,7 +77,9 @@
 <link rel="stylesheet" href="/index.css">
 </head>
 <body>
+    <div class="scanline"></div>
     <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
 <script type="module" src="/index.tsx"></script>
 </body>
 </html>
