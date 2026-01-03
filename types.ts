@@ -2,10 +2,9 @@
 export enum PresentationStep {
   INTRO = 'INTRO',
   PROBLEM = 'PROBLEM',
-  DEFENSES = 'DEFENSES',
   PROPOSAL = 'PROPOSAL',
-  EVALUATION = 'EVALUATION',
   DEMO = 'DEMO',
+  LIMITATIONS = 'LIMITATIONS',
   CONCLUSION = 'CONCLUSION'
 }
 
@@ -15,7 +14,6 @@ export interface LogEntry {
   source: 'ATTACKER' | 'VICTIM' | 'SERVER';
   message: string;
   type: 'info' | 'error' | 'success' | 'warning' | 'critical';
-  details?: string;
 }
 
 export interface SimulationStep {
@@ -26,5 +24,6 @@ export interface SimulationStep {
   victimAction: string;
   serverResponse: string;
   requestHeaders?: Record<string, string>;
+  flow: 'H2V' | 'V2S' | 'S2V'; // Hacker to Victim, Victim to Server, Server to Victim
   logs: LogEntry[];
 }
