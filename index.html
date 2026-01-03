@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ارائه پروژه امنیت شبکه - دفاع در برابر CSRF</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Babel standalone برای کامپایل کدهای TSX مستقیماً در مرورگر (مخصوص گیت‌هاب) -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -20,24 +22,8 @@
             min-height: 100vh;
             display: flex;
         }
-        .glass-panel {
-            background: rgba(30, 41, 59, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        /* Scrollbar Styling */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1e293b;
-            border-radius: 10px;
-        }
     </style>
-<script type="importmap">
+    <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@19.0.0",
@@ -50,11 +36,10 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
 </head>
 <body>
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
-<script type="module" src="/index.tsx"></script>
+    <!-- نوع اسکریپت به text/babel تغییر یافت تا در لحظه توسط مرورگر کامپایل شود -->
+    <script type="text/babel" data-type="module" src="./index.tsx"></script>
 </body>
 </html>

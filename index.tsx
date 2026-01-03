@@ -6,16 +6,12 @@ import App from './App.tsx';
 const rootElement = document.getElementById('root');
 
 if (rootElement) {
-  try {
-    const root = ReactDOM.createRoot(rootElement);
-    root.render(
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    );
-  } catch (error) {
-    console.error("React Rendering Error:", error);
-  }
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
 } else {
-  console.error("Root element not found in index.html");
+  console.error("المان روت پیدا نشد.");
 }
