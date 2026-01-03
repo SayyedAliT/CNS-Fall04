@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Section } from '../types';
+import { Section } from '../types.ts';
 
 interface HeaderProps {
   activeSection: Section;

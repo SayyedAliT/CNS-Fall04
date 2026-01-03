@@ -30,15 +30,14 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-slate-950 text-slate-200" dir="rtl">
-      {/* Sidebar Navigation */}
+    <div className="flex h-screen w-full bg-slate-950 text-slate-200 overflow-hidden" dir="rtl">
       <Sidebar activeSection={activeSection} setActiveSection={setActiveSection} />
-      
-      {/* Main Content Area */}
-      <main className="flex-1 flex flex-col relative h-screen overflow-y-auto">
+      <main className="flex-1 flex flex-col h-full overflow-hidden">
         <Header activeSection={activeSection} />
-        <div className="p-8 pb-20 max-w-6xl mx-auto w-full">
-          {renderSection()}
+        <div className="flex-1 overflow-y-auto p-8 pb-20">
+          <div className="max-w-6xl mx-auto w-full">
+            {renderSection()}
+          </div>
         </div>
       </main>
     </div>

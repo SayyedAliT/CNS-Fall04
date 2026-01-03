@@ -19,8 +19,8 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) => {
   // --- فیلدهای قابل تغییر توسط شما ---
-  const PROFESSOR_NAME = "دکتر مهسا سعیدی"; 
-  const GROUP_MEMBERS = "پوریا مهدیان - علی دهقان زاده -  سیدعلی تهامی"; 
+  const PROFESSOR_NAME = "نام استاد شما"; 
+  const GROUP_MEMBERS = "نام شما و هم‌گروهی‌ها"; 
   // ---------------------------------
 
   const items = [
@@ -35,7 +35,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
   ];
 
   return (
-    <aside className="w-72 bg-slate-900 border-l border-slate-800 flex flex-col h-screen z-20 shadow-2xl">
+    <aside className="w-72 bg-slate-900 border-l border-slate-800 flex flex-col h-full z-20 shadow-2xl shrink-0">
       <div className="p-6 border-b border-slate-800">
         <h1 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">
           پروژه امنیت شبکه
@@ -60,7 +60,6 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
         ))}
       </nav>
       
-<<<<<<< HEAD
       <div className="p-6 bg-slate-900/50 border-t border-slate-800 text-xs text-slate-500 space-y-2">
         <p className="flex flex-col">
           <span className="opacity-50">استاد مربوطه:</span>
@@ -70,11 +69,6 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
           <span className="opacity-50">اعضای گروه:</span>
           <span className="text-slate-300 font-bold">{GROUP_MEMBERS}</span>
         </p>
-=======
-      <div className="p-6 bg-slate-900/50 border-t border-slate-800 text-xs text-slate-500 space-y-1">
-        <p>استاد درس:دکتر مهسا سعیدی/p>
-        <p>اعضای گروه: پوریا مهدیان -  علی دهقان زاده - سید علی تهامی</p>
->>>>>>> 09f07d7a80ddeba7df144a54701f5eb714d8e7ef
       </div>
     </aside>
   );
