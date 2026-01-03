@@ -56,8 +56,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection }) =>
       </nav>
       
       <div className="p-6 bg-slate-900/50 border-t border-slate-800 text-xs text-slate-500 space-y-1">
-        <p>استاد مربوطه: درس امنیت شبکه</p>
-        <p>اعضای گروه: دانشجویان مهندسی کامپیوتر</p>
+        <p>استاد درس:دکتر مهسا سعیدی/p>
+        <p>اعضای گروه: پوریا مهدیان -  علی دهقان زاده - سید علی تهامی</p>
       </div>
     </aside>
   );
